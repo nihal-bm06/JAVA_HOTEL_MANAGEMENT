@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.hotel.controller.DashboardController">
+
+    <top>
+        <VBox spacing="15" style="-fx-padding: 20;">
+            <Label text="Hotel Management Dashboard" styleClass="dashboard-title"/>
+            <HBox spacing="15">
+                <VBox styleClass="card-box" prefWidth="160" spacing="8">
+                    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+                    <Label text="Total Rooms" styleClass="card-title"/>
+                    <Label fx:id="totalRoomsLabel" styleClass="dashboard-card"/>
+                </VBox>
+
+                <VBox styleClass="card-box" prefWidth="160" spacing="8">
+                    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+                    <Label text="Available Rooms" styleClass="card-title"/>
+                    <Label fx:id="availableRoomsLabel" styleClass="dashboard-card"/>
+                </VBox>
+
+                <VBox styleClass="card-box" prefWidth="160" spacing="8">
+                    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+                    <Label text="Occupied Rooms" styleClass="card-title"/>
+                    <Label fx:id="occupiedRoomsLabel" styleClass="dashboard-card"/>
+                </VBox>
+
+                <VBox styleClass="card-box" prefWidth="160" spacing="8">
+                    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+                    <Label text="Revenue" styleClass="card-title"/>
+                    <Label fx:id="revenueLabel" styleClass="dashboard-card"/>
+                </VBox>
+
+                <VBox styleClass="card-box" prefWidth="160" spacing="8">
+                    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+                    <Label text="Occupancy Rate" styleClass="card-title"/>
+                    <Label fx:id="occupancyRateLabel" styleClass="dashboard-card"/>
+                </VBox>
+
+                <VBox styleClass="card-box" prefWidth="160" spacing="8">
+                    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+                    <Label text="Active Bookings" styleClass="card-title"/>
+                    <Label fx:id="activeBookingsLabel" styleClass="dashboard-card"/>
+                </VBox>
+
+                <VBox styleClass="card-box" prefWidth="160" spacing="8">
+                    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+                    <Label text="Checked Out" styleClass="card-title"/>
+                    <Label fx:id="checkedOutLabel" styleClass="dashboard-card"/>
+                </VBox>
+
+                <VBox styleClass="card-box" prefWidth="160" spacing="8">
+                    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+                    <Label text="Avg Rating" styleClass="card-title"/>
+                    <Label fx:id="avgRatingLabel" styleClass="dashboard-card"/>
+                </VBox>
+            </HBox>
+
+            <HBox spacing="10">
+    <Button text="Refresh Everything" onAction="#handleRefreshAll" styleClass="secondary-button"/>
+    <Button text="Logout" onAction="#handleLogout" style="-fx-background-color: #dc2626; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;"/>
+</HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <TabPane>
+            <tabs>
+
+                <!-- ROOM MANAGEMENT -->
+                <Tab text="Room Management" closable="false">
+                    <VBox spacing="15" style="-fx-padding: 15;">
+                        <GridPane hgap="10" vgap="10">
+                            <Label text="Room Number:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                            <TextField fx:id="roomNumberField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                            <Label text="Room Type:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                            <ComboBox fx:id="roomTypeBox" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                            <Label text="Price:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                            <TextField fx:id="priceField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                            <Label text="Amenities:" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                            <TextField fx:id="amenitiesField" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+                            <Label text="Notes:" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                            <TextField fx:id="notesField" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+                        </GridPane>
+
+                        <HBox spacing="10">
+                            <Button text="Add Room" onAction="#handleAddRoom"/>
+                            <Button text="Edit Selected" onAction="#handleEditRoom"/>
+                            <Button text="Delete Selected" onAction="#handleDeleteRoom"/>
+                            <Button text="View All" onAction="#handleViewAllRooms"/>
+                            <Button text="Available Only" onAction="#handleAvailableRooms"/>
+                        </HBox>
+
+                        <HBox spacing="10">
+                            <TextField fx:id="searchRoomField" promptText="Search room / amenity / status"/>
+                            <Button text="Search" onAction="#handleSearchRoom"/>
+                        </HBox>
+
+                        <TableView fx:id="roomTable" VBox.vgrow="ALWAYS"/>
+                    </VBox>
+                </Tab>
+
+                <!-- BOOKING MANAGEMENT -->
+                <Tab text="Booking Management" closable="false">
+                    <VBox spacing="15" style="-fx-padding: 15;">
+                        <GridPane hgap="10" vgap="10">
+                            <Label text="Customer Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                            <TextField fx:id="customerNameField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                            <Label text="Contact Number:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                            <TextField fx:id="contactField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                            <Label text="Room Number:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                            <TextField fx:id="bookingRoomNumberField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                            <Label text="Check-In Date:" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                            <DatePicker fx:id="checkInPicker" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+                            <Label text="Planned Check-Out:" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                            <DatePicker fx:id="checkOutPicker" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+                            <Label text="Discount:" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+                            <ComboBox fx:id="discountBox" GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+
+                            <Label text="Payment Method:" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+                            <ComboBox fx:id="paymentBox" GridPane.rowIndex="3" GridPane.columnIndex="3"/>
+                        </GridPane>
+
+                        <Button text="Book Room" onAction="#handleBookRoom"/>
+                        <TableView fx:id="bookingTable" VBox.vgrow="ALWAYS"/>
+                    </VBox>
+                </Tab>
+
+                <!-- CHECKOUT MANAGEMENT -->
+                <Tab text="Checkout Management" closable="false">
+                    <VBox spacing="15" style="-fx-padding: 15;">
+                        <Label text="Select an active booking from Booking Management tab first for safe checkout."
+                               style="-fx-text-fill: #1d4ed8; -fx-font-weight: bold;"/>
+
+                        <GridPane hgap="10" vgap="10">
+                            <Label text="Booking ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                            <TextField fx:id="checkoutBookingIdField" editable="false" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                            <Label text="Customer Name:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                            <TextField fx:id="checkoutCustomerField" editable="false" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                            <Label text="Room Number:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                            <TextField fx:id="checkoutRoomField" editable="false" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                            <Label text="Actual Checkout Date:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                            <DatePicker fx:id="actualCheckoutDatePicker" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                        </GridPane>
+
+                        <Button text="Checkout Selected Booking" onAction="#handleCheckoutByBookingId"/>
+                        <Label text="Bill Preview"/>
+                        <TextArea fx:id="billPreviewArea" prefHeight="380"/>
+                    </VBox>
+                </Tab>
+
+                <!-- HOUSEKEEPING -->
+                <Tab text="Housekeeping" closable="false">
+                    <VBox spacing="15" style="-fx-padding: 20;">
+                        <Label text="Housekeeping Management"
+                               style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+                        <GridPane hgap="10" vgap="10">
+                            <Label text="Room Number:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                            <TextField fx:id="housekeepingRoomField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                        </GridPane>
+
+                        <HBox spacing="10">
+                            <Button text="Mark Room Clean" onAction="#handleMarkClean"/>
+                            <Button text="Simulate Cleaning Race" onAction="#handleSimulateCleaningRace"/>
+                        </HBox>
+
+                        <Label text="How it works:" style="-fx-font-weight: bold;"/>
+                        <Label text="1. Book a room → status becomes Occupied&#10;2. Checkout that booking → room becomes Cleaning&#10;3. Use 'Mark Room Clean' → room becomes Available&#10;4. Use simulation button to demonstrate thread synchronization"/>
+                    </VBox>
+                </Tab>
+
+                <!-- BOOKING HISTORY -->
+                <Tab text="Booking History" closable="false">
+                    <VBox spacing="15" style="-fx-padding: 15;">
+                        <HBox spacing="10">
+                            <TextField fx:id="historySearchField" promptText="Search booking ID / customer / room"/>
+                            <Button text="Search History" onAction="#handleSearchHistory"/>
+                            <Button text="Show All" onAction="#handleRefreshAll"/>
+                        </HBox>
+                        <TableView fx:id="historyTable" VBox.vgrow="ALWAYS"/>
+                    </VBox>
+                </Tab>
+
+                <!-- FEEDBACK -->
+                <Tab text="Feedback" closable="false">
+                    <VBox spacing="15" style="-fx-padding: 15;">
+                        <GridPane hgap="10" vgap="10">
+                            <Label text="Customer Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                            <TextField fx:id="feedbackCustomerField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                            <Label text="Rating (0 to 5):" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                            <TextField fx:id="ratingField" promptText="Example: 4.5" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                            <Label text="Comments:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                            <TextArea fx:id="feedbackCommentsArea" prefHeight="120" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                        </GridPane>
+
+                        <Button text="Submit Feedback" onAction="#handleAddFeedback"/>
+                    </VBox>
+                </Tab>
+
+                <!-- ANALYTICS -->
+                <Tab text="Analytics" closable="false">
+                    <ScrollPane fitToWidth="true" fitToHeight="true">
+                        <VBox spacing="20" style="-fx-padding: 20;">
+                            <HBox spacing="20">
+                                <PieChart fx:id="occupancyPieChart" title="Room Occupancy" prefWidth="420" prefHeight="300"/>
+                                <PieChart fx:id="bookingStatusPieChart" title="Booking Status" prefWidth="420" prefHeight="300"/>
+                            </HBox>
+
+                            <HBox spacing="20">
+                                <BarChart fx:id="roomTypeBarChart" title="Room Type Distribution" prefWidth="600" prefHeight="350">
+                                    <xAxis><CategoryAxis label="Room Type"/></xAxis>
+                                    <yAxis><NumberAxis label="Count"/></yAxis>
+                                </BarChart>
+
+                                <BarChart fx:id="ratingBarChart" title="Customer Rating Distribution" prefWidth="600" prefHeight="350">
+                                    <xAxis><CategoryAxis label="Rating Band"/></xAxis>
+                                    <yAxis><NumberAxis label="Count"/></yAxis>
+                                </BarChart>
+                            </HBox>
+
+                            <BarChart fx:id="revenueByTypeBarChart" title="Revenue by Room Type" prefHeight="350">
+                                <xAxis><CategoryAxis label="Room Type"/></xAxis>
+                                <yAxis><NumberAxis label="Revenue"/></yAxis>
+                            </BarChart>
+                        </VBox>
+                    </ScrollPane>
+                </Tab>
+
+            </tabs>
+        </TabPane>
+    </center>
+
+</BorderPane>

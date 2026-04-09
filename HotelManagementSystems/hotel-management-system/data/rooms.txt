@@ -1,0 +1,2 @@
+1,Single,500.0,Occupied,AC;WIFI,1 bed
+2,Double,1000.0,Occupied,AC;WIFI;TV,2 bed

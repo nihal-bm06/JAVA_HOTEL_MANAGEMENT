@@ -1,0 +1,38 @@
+====================================================
+           GRAND STAY HOTEL & SUITES
+        Premium Hospitality Invoice
+====================================================
+Bill Generated At : 08-04-2026 03:50 pm
+
+Booking ID        : BOOK-05542E2A
+Customer ID       : CUST-6600D129
+Customer Name     : RAM
+Contact Number    : 223333
+
+Room Number       : 2
+Room Type         : Double
+
+Check-In Date     : 2026-04-13
+Check-In Time     : 14:00
+Planned Check-Out : 2026-04-15
+Planned Out Time  : 11:00
+Actual Check-Out  : 2026-04-10
+Actual Out Time   : 15:50:49.411664500
+
+Planned Nights    : 2
+Charged Nights    : 1
+
+----------------------------------------------------
+Original Room Bill : ₹ 2000.00
+Discount Type      : Student Discount
+Discount Amount    : ₹ 160.00
+Late Checkout Fee  : ₹ 250.00
+Refund             : ₹ 670.00
+----------------------------------------------------
+NET PAYABLE        : ₹ 1170.00
+Payment Method     : UPI
+Booking Status     : Checked Out
+====================================================
+Thank you for choosing Grand Stay Hotel & Suites!
+We look forward to welcoming you again.
+====================================================

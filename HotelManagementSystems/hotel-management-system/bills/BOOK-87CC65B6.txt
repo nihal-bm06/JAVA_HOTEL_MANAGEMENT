@@ -1,0 +1,38 @@
+====================================================
+           GRAND STAY HOTEL & SUITES
+        Premium Hospitality Invoice
+====================================================
+Bill Generated At : 08-04-2026 03:50 pm
+
+Booking ID        : BOOK-87CC65B6
+Customer ID       : CUST-0D7E242B
+Customer Name     : NIHAL
+Contact Number    : 1212121212
+
+Room Number       : 1
+Room Type         : Single
+
+Check-In Date     : 2026-04-07
+Check-In Time     : 14:00
+Planned Check-Out : 2026-04-08
+Planned Out Time  : 11:00
+Actual Check-Out  : 2026-04-08
+Actual Out Time   : 11:00
+
+Planned Nights    : 1
+Charged Nights    : 1
+
+----------------------------------------------------
+Original Room Bill : ₹ 500.00
+Discount Type      : No Discount
+Discount Amount    : ₹ 0.00
+Late Checkout Fee  : ₹ 0.00
+Refund             : ₹ 0.00
+----------------------------------------------------
+NET PAYABLE        : ₹ 500.00
+Payment Method     : Card
+Booking Status     : Checked Out
+====================================================
+Thank you for choosing Grand Stay Hotel & Suites!
+We look forward to welcoming you again.
+====================================================

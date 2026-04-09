@@ -1,0 +1,38 @@
+====================================================
+           GRAND STAY HOTEL & SUITES
+        Premium Hospitality Invoice
+====================================================
+Bill Generated At : 08-04-2026 04:53 pm
+
+Booking ID        : BOOK-0F7D3210
+Customer ID       : CUST-E7F0A385
+Customer Name     : SSJS
+Contact Number    : 444
+
+Room Number       : 2
+Room Type         : Double
+
+Check-In Date     : 2026-04-08
+Check-In Time     : 14:00
+Planned Check-Out : 2026-04-10
+Planned Out Time  : 11:00
+Actual Check-Out  : 2026-04-09
+Actual Out Time   : 16:53
+
+Planned Nights    : 2
+Charged Nights    : 1
+
+----------------------------------------------------
+Original Room Bill : ₹ 2000.00
+Discount Type      : No Discount
+Discount Amount    : ₹ 0.00
+Late Checkout Fee  : ₹ 0.00
+Refund             : ₹ 1000.00
+----------------------------------------------------
+NET PAYABLE        : ₹ 1000.00
+Payment Method     : UPI
+Booking Status     : Checked Out
+====================================================
+Thank you for choosing Grand Stay Hotel & Suites!
+We look forward to welcoming you again.
+====================================================

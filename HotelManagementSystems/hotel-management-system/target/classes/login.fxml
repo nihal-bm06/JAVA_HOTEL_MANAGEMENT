@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.hotel.controller.LoginController"
+           style="-fx-background-color: linear-gradient(to bottom right, #0f172a, #1e3a8a);">
+
+    <VBox alignment="CENTER" spacing="20" maxWidth="400"
+          style="-fx-background-color: white; -fx-background-radius: 18; -fx-padding: 35; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 18, 0.2, 0, 6);">
+
+        <Label text="🏨 Hotel Management Login"
+               style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #0f172a;"/>
+
+        <GridPane hgap="12" vgap="15">
+            <Label text="Username:" GridPane.rowIndex="0" GridPane.columnIndex="0"
+                   style="-fx-font-weight: bold;"/>
+            <TextField fx:id="usernameField" promptText="Enter username"
+                       GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Password:" GridPane.rowIndex="1" GridPane.columnIndex="0"
+                   style="-fx-font-weight: bold;"/>
+            <PasswordField fx:id="passwordField" promptText="Enter password"
+                           GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        </GridPane>
+
+        <Button text="Login" onAction="#handleLogin"
+                style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 10; -fx-padding: 10 24;"/>
+
+        <Label text="Demo Credentials → admin / admin123"
+               style="-fx-text-fill: #64748b; -fx-font-size: 12px;"/>
+
+        <Label fx:id="messageLabel" textFill="red"/>
+    </VBox>
+</StackPane>
