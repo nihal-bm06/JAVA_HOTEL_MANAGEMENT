@@ -537,10 +537,8 @@ This project demonstrates:
 
 ## 👨‍💻 Author
 
-**Your Name Here**
+**Nihal B M**
 Java Hotel Management System Project
-
-*(Replace with your actual name / USN / college details if needed.)*
 
 ---
 
